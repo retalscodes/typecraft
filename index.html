@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeCraft</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <header>
+      <div class="logo">TypeCraft</div>
+      <div class="theme-tabs">
+        <button class="theme-btn active" data-theme="f1">🏎️ F1</button>
+        <button class="theme-btn" data-theme="cosmos">🌌 Cosmos</button>
+        <button class="theme-btn" data-theme="cinema">🎬 Cinema</button>
+        <button class="theme-btn" data-theme="chaos">🎲 Chaos</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="stats-bar">
+        <div class="stat">
+          <span class="stat-value" id="wpm-display">—</span>
+          <span class="stat-label">WPM</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="acc-display">—</span>
+          <span class="stat-label">ACC</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="time-display">30</span>
+          <span class="stat-label">SEC</span>
+        </div>
+      </div>
+
+      <div class="text-container" id="text-container">
+        <div class="text-display" id="text-display"></div>
+      </div>
+
+      <input
+        type="text"
+        id="type-input"
+        class="type-input"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        placeholder="click here and start typing…"
+        disabled
+      />
+
+      <div class="controls">
+        <div class="duration-tabs">
+          <button class="dur-btn active" data-dur="30">30s</button>
+          <button class="dur-btn" data-dur="60">60s</button>
+          <button class="dur-btn" data-dur="90">90s</button>
+        </div>
+        <button class="restart-btn" id="restart-btn" title="Restart (Tab)">↺ restart</button>
+      </div>
+    </main>
+
+    <div class="results-overlay" id="results-overlay" hidden>
+      <div class="results-card">
+        <div class="results-theme-badge" id="results-theme-badge"></div>
+        <h2>Done!</h2>
+        <div class="results-grid">
+          <div class="result-block">
+            <div class="result-big" id="res-wpm">—</div>
+            <div class="result-label">WPM</div>
+          </div>
+          <div class="result-block">
+            <div class="result-big" id="res-acc">—</div>
+            <div class="result-label">Accuracy</div>
+          </div>
+          <div class="result-block">
+            <div class="result-big" id="res-correct">—</div>
+            <div class="result-label">Correct</div>
+          </div>
+          <div class="result-block">
+            <div class="result-big" id="res-errors">—</div>
+            <div class="result-label">Errors</div>
+          </div>
+        </div>
+        <div class="result-quote" id="res-quote"></div>
+        <button class="retry-btn" id="retry-btn">Try Again</button>
+      </div>
+    </div>
+
+    <footer>
+      <span>Tab to restart &nbsp;·&nbsp; Esc to reset</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
